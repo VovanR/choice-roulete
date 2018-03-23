@@ -12,22 +12,6 @@ Demo: [vovanr.github.io/choice-roulete][demo]
 
 ![](preview.png)
 
-## Install
-
-```shell
-npm install --save choice-roulete
-```
-
-## Usage
-See: [example](example/app.jsx)
-
-```js
-var foo = require('choice-roulete');
-
-foo()
-//=> Foo
-```
-
 ## License
 MIT © [Vladimir Rodkin](https://github.com/VovanR)
 
