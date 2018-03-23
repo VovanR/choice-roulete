@@ -1,6 +1,7 @@
 import Timeout from './timeout.js'
 
 const ACTIVE_CLASS_NAME = 'done-message_active'
+const DONE_MESSAGE_SHOW_TIMEOUT = 1000
 
 export default class DoneMessage {
 	constructor(options) {
@@ -14,7 +15,7 @@ export default class DoneMessage {
 	_initialize() {
 		this._timer = new Timeout({
 			onDone: () => this._hide(),
-			timeout: 1000,
+			timeout: DONE_MESSAGE_SHOW_TIMEOUT,
 		})
 	}
 

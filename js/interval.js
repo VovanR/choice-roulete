@@ -7,6 +7,7 @@ export default class Timeout {
 		this._onStart = options.onStart || noop
 		this._onTick = options.onTick || noop
 		this._onDone = options.onDone || noop
+		this._onStop = options.onStop || noop
 		this._timeout = options.timeout
 
 		this._oneTickPercent = 1 / (this._timeout / PERIOD)
@@ -37,6 +38,7 @@ export default class Timeout {
 
 	stop() {
 		this._reset()
+		this._onStop()
 	}
 
 	_done() {

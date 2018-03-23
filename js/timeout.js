@@ -4,6 +4,7 @@ export default class Timeout {
 	constructor(options) {
 		this._onStart = options.onStart || noop
 		this._onDone = options.onDone || noop
+		this._onStop = options.onStop || noop
 		this._timeout = options.timeout
 
 		this._timer = null
@@ -21,6 +22,7 @@ export default class Timeout {
 
 	stop() {
 		this._reset()
+		this._onStop()
 	}
 
 	_done() {

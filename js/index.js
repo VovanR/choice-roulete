@@ -1,4 +1,3 @@
-// import Timeout from './timeout.js'
 import Stat from './stat.js'
 import ApproveTimer from './approve-timer.js'
 import DoneMessage from './done-message.js'
@@ -15,7 +14,7 @@ const approveTimer = new ApproveTimer({
 	element: document.getElementById('progress'),
 	onDone: () => {
 		doneMessage.show()
-	}
+	},
 })
 
 const items = []
