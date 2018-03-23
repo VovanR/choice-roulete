@@ -1,37 +1,37 @@
-const noop = () => {}
+const noop = () => {};
 
 export default class Timeout {
 	constructor(options) {
-		this._onStart = options.onStart || noop
-		this._onDone = options.onDone || noop
-		this._onStop = options.onStop || noop
-		this._timeout = options.timeout
+		this._onStart = options.onStart || noop;
+		this._onDone = options.onDone || noop;
+		this._onStop = options.onStop || noop;
+		this._timeout = options.timeout;
 
-		this._timer = null
+		this._timer = null;
 	}
 
 	start() {
-		this._reset()
+		this._reset();
 
 		this._timer = setTimeout(() => {
-			this._done()
-		}, this._timeout)
+			this._done();
+		}, this._timeout);
 
-		this._onStart()
+		this._onStart();
 	}
 
 	stop() {
-		this._reset()
-		this._onStop()
+		this._reset();
+		this._onStop();
 	}
 
 	_done() {
-		this._reset()
-		this._onDone()
+		this._reset();
+		this._onDone();
 	}
 
 	_reset() {
-		clearTimeout(this._timer)
-		this._timer = null
+		clearTimeout(this._timer);
+		this._timer = null;
 	}
 }

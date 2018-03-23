@@ -1,42 +1,42 @@
-import Stat from './stat.js'
-import ApproveTimer from './approve-timer.js'
-import DoneMessage from './done-message.js'
-import Random from './random.js'
+import Stat from './stat.js';
+import ApproveTimer from './approve-timer.js';
+import DoneMessage from './done-message.js';
+import Random from './random.js';
 
-const stat = new Stat()
-const random = new Random()
+const stat = new Stat();
+const random = new Random();
 
 const doneMessage = new DoneMessage({
-	element: document.getElementById('done-message'),
-})
+	element: document.getElementById('done-message')
+});
 
 const approveTimer = new ApproveTimer({
 	element: document.getElementById('progress'),
 	onDone: () => {
-		doneMessage.show()
-	},
-})
+		doneMessage.show();
+	}
+});
 
-const items = []
+const items = [];
 
-const addItem = (name) => items.push({name})
+const addItem = name => items.push({name});
 
 const i = [
 	'Башмачники',
 	'Китайцы',
 	'Блины',
 	'Пышка',
-	'Вон там',
-]
+	'Вон там'
+];
 
-i.forEach(addItem)
+i.forEach(addItem);
 
 function update() {
-	document.getElementById('result').innerText = random.getRandomItem(items).name
-	approveTimer.start()
-	stat.log()
+	document.getElementById('result').innerText = random.getRandomItem(items).name;
+	approveTimer.start();
+	stat.log();
 }
 
-document.getElementById('app').addEventListener('click', update)
+document.getElementById('app').addEventListener('click', update);
 
-update()
+update();

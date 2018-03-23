@@ -27,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/VovanR/choice-roulete/issues"
   },
-  "homepage": "https://github.com/VovanR/choice-roulete#readme"
+  "homepage": "https://github.com/VovanR/choice-roulete#readme",
+  "xo": {
+    "envs": "browser",
+    "rules": {
+      "import/extensions": 0
+    }
+  }
 }
