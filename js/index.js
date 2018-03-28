@@ -2,6 +2,7 @@ import Stat from './stat.js';
 import ApproveTimer from './approve-timer.js';
 import DoneMessage from './done-message.js';
 import Random from './random.js';
+import Data from './data.js';
 
 const stat = new Stat();
 const random = new Random();
@@ -17,10 +18,7 @@ const approveTimer = new ApproveTimer({
 	}
 });
 
-const items = [];
-
-const addItem = name => items.push({name});
-
+// TODO: Remove fish data
 const i = [
 	'Башмачники',
 	'Китайцы',
@@ -29,10 +27,17 @@ const i = [
 	'Вон там'
 ];
 
-i.forEach(addItem);
+const data = new Data();
+
+// TODO: Remove with fish data
+data._clear();
+
+i.forEach(data.addItem.bind(data));
 
 function update() {
-	document.getElementById('result').innerText = random.getRandomItem(items).name;
+	const items = data.getItems();
+	const randomItem = random.getRandomItem(items).name;
+	document.getElementById('result').innerText = randomItem;
 	approveTimer.start();
 	stat.log();
 }
