@@ -5,9 +5,12 @@ const KEY_CODE = {
 
 export default class Settings {
 	constructor(options) {
-		this._element = options.element;
-		this._inputElement = options.inputElement;
-		this._listElement = options.listElement;
+		this._items = options.items;
+		this._onAddItem = options.onAddItem;
+
+		this._element = null;
+		this._inputElement = null;
+		this._listElement = null;
 
 		this._initialize();
 	}
@@ -17,6 +20,7 @@ export default class Settings {
 		this._inputElement = this._element.querySelector('.js-settings__input');
 		this._listElement = this._element.querySelector('.js-settings__list');
 
+		this._buildList();
 		this._bindControls();
 	}
 
@@ -27,8 +31,15 @@ export default class Settings {
 		this._inputElement.addEventListener('keyup', (e) => {
 			if (e.keyCode === KEY_CODE.ENTER) {
 				this._addItem(e.target.value);
+				this._onAddItem(e.target.value);
 				e.target.value = '';
 			}
+		});
+	}
+
+	_buildList() {
+		this._items.forEach(item => {
+			this._addItem(item.name);
 		});
 	}
 

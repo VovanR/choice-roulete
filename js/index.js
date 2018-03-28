@@ -47,4 +47,7 @@ document.getElementById('app').addEventListener('click', update);
 
 update();
 
-new Settings({});
+new Settings({
+	items: data.getItems(),
+	onAddItem: name => data.addItem(name)
+});
