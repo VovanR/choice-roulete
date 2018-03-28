@@ -2,6 +2,7 @@ import Stat from './stat.js';
 import ApproveTimer from './approve-timer.js';
 import DoneMessage from './done-message.js';
 import Random from './random.js';
+import Settings from './settings.js';
 import Data from './data.js';
 
 const stat = new Stat();
@@ -45,3 +46,5 @@ function update() {
 document.getElementById('app').addEventListener('click', update);
 
 update();
+
+new Settings({});

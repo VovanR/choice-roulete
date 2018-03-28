@@ -9,7 +9,7 @@
 	<meta name="description" content="%DESCRIPTION%">
 
 	<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
-  
+
 	<link rel="manifest" href="manifest.json">
 	<meta name="theme-color" content="#ffffff">
 
@@ -26,6 +26,15 @@
 
 	<span class="result" id="result"></span>
 
+	<div class="settings" id="settings">
+		<label class="settings__label" for="settings__toggler">⚙</label>
+		<input class="settings__toggler" id="settings__toggler" type="checkbox">
+
+		<div class="settings__content">
+			<input class="settings__input js-settings__input" type="text" placeholder="Add new item">
+			<ul class="settings__list js-settings__list"></ul>
+		</div>
+	</div>
 
 	<a
 		class="copyright"

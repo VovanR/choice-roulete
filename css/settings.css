@@ -1,0 +1,59 @@
+.settings {
+	display: flex;
+	flex-direction: column-reverse;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.settings__toggler {
+	margin: 0;
+	border: none;
+	background: none;
+	-webkit-appearance: none;
+}
+
+.settings__label {
+	width: 45px;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3em;
+	cursor: pointer;
+	opacity: 0.25;
+	transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	font-family: monospace;
+	color: #000;
+}
+
+.settings__label:hover {
+	opacity: 1;
+}
+
+.settings__toggler:checked + .settings__content {
+	display: block;
+}
+
+.settings__content {
+	display: none;
+	background-color: #fff;
+	padding: 15px;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.settings__input {
+}
+
+.settings__list {
+	margin: 15px 0 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.settings__list:empty {
+	margin-top: 0;
+}
+
+.settings__list-item {
+}
