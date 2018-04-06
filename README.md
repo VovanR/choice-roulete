@@ -1,5 +1,8 @@
 # choice-roulete
 
+<img align="right" width="120" height="120"
+     src="./logo.svg" alt="Choice roulete logo">
+
 [![XO code style][codestyle-image]][codestyle-url]
 
 [![Build Status][travis-image]][travis-url]
