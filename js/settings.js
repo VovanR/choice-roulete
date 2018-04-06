@@ -25,10 +25,10 @@ export default class Settings {
 	}
 
 	_bindControls() {
-		this._element.addEventListener('click', (e) => {
+		this._element.addEventListener('click', e => {
 			e.stopPropagation();
 		});
-		this._inputElement.addEventListener('keyup', (e) => {
+		this._inputElement.addEventListener('keyup', e => {
 			if (e.keyCode === KEY_CODE.ENTER) {
 				this._addItem(e.target.value);
 				this._onAddItem(e.target.value);
