@@ -11,16 +11,13 @@
   },
   "scripts": {
     "start": "http-server .",
-    "test": "xo",
-    "prepush": "npm test",
-    "precommit": "npm test"
+    "test": "xo"
   },
   "main": "index.html",
   "keywords": [],
   "dependencies": {},
   "devDependencies": {
     "http-server": "^0.11.1",
-    "husky": "^0.14.3",
     "xo": "^0.20.3"
   },
   "peerDependencies": {},
