@@ -3,14 +3,14 @@ const STORAGE_FILL_NAME = 'choice-roulete-data';
 const INIT_DATA = {
 	items: [],
 	_lastId: 0
-}
+};
 
 function getInitData() {
 	return JSON.parse(JSON.stringify(INIT_DATA));
 }
 
 export default class Data {
-	constructor(options) {
+	constructor() {
 		this._data = getInitData();
 		this._initialize();
 	}
@@ -28,7 +28,7 @@ export default class Data {
 	addItem(name) {
 		this._data.items.push({
 			id: this._getNextId(),
-			name,
+			name
 		});
 		this._save();
 	}
